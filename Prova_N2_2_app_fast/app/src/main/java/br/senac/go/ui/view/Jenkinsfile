@@ -1,0 +1,18 @@
+pipeline{
+
+    agent any
+    environment{
+        projetoJK = "$WORKSPACE/Prova_N2_2_app_fast"
+    }
+
+    stages{
+        stage(''){
+            steps{
+                echo ''
+                dir("$projetoJK"){
+                    sh './gradle wrapper'
+                }
+            }
+        }
+    }
+}
