@@ -4,7 +4,6 @@ pipeline{
     environment{
         projetoJK = "$WORKSPACE/Prova_N2_2_app_fast"
     }
-
     stages{
         stage(''){
             steps{
