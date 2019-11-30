@@ -23,10 +23,17 @@ pipeline{
         }
         stage('Construindo APK'){
             steps{
-                echo 'Etapa da cosntrução APK'
+                echo 'Etapa gerando APK'
                 dir("$projetoJK"){
                     sh './gradlew assembleRelease'
                 }
+            }
+        }
+        stage('Arquivando APK'){
+            steps{
+                echo 'arquivando apk gerado'
+                archiveArtifacts artifacts: '**/app-release-unsigned.apk', fingerprint: true, allowEmptyArchive: false
+                echo'Arquivado com Sucesso!'
             }
         }
     }
