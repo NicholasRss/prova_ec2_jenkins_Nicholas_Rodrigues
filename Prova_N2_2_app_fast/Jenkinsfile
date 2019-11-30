@@ -5,11 +5,11 @@ pipeline{
         projetoJK = "$WORKSPACE/Prova_N2_2_app_fast"
     }
     stages{
-        stage(''){
+        stage('Wrapper'){
             steps{
-                echo ''
+                echo 'Criando Ambiente Workspace'
                 dir("$projetoJK"){
-                    sh '$projetoJK/gradle wrapper'
+                    sh 'gradle wrapper'
                 }
             }
         }
