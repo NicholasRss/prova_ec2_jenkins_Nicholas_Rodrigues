@@ -13,5 +13,13 @@ pipeline{
                 }
             }
         }
+        stage('Teste Unit'){
+            steps{
+                echo 'Rodando todos os Testes'
+                dir("$projetoJK"){
+                    sh './gradlew test '
+                }
+            }
+        }
     }
 }
