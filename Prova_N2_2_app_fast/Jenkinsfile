@@ -9,7 +9,7 @@ pipeline{
             steps{
                 echo ''
                 dir("$projetoJK"){
-                    sh './gradle wrapper'
+                    sh '$projetoJK/gradle wrapper'
                 }
             }
         }
